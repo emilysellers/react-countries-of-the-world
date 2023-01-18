@@ -9,6 +9,6 @@ export function useCountries() {
       setCountries(resp);
     };
     fetchData();
-  });
+  }, []);
   return countries;
 }
