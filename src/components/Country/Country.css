@@ -1,0 +1,9 @@
+.countryCard {
+  font-weight: bold;
+  border: 2px solid grey;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

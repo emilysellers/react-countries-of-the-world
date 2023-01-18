@@ -1,7 +1,11 @@
-export default function Country() {
+import './Country.css';
+
+export default function Country({ name }) {
   return (
-    <div className="countryCard">
-      <div>country name</div>
+    <div>
+      <div className="countryCard">
+        <h2>{name}</h2>
+      </div>
     </div>
   );
 }
