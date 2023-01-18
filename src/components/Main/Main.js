@@ -4,7 +4,7 @@ import Country from '../Country/Country.js';
 import './Main.css';
 
 export default function Main() {
-  const countries = useCountries();
+  const { countries, error } = useCountries();
 
   return (
     <main>
@@ -28,6 +28,7 @@ export default function Main() {
           <Country key={country.id} {...country} />
         ))}
       </section>
+      <p style={{ color: 'red' }}>{error}</p>
       <footer>developed by Emily 2023</footer>
     </main>
   );
