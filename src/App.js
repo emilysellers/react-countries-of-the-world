@@ -4,10 +4,10 @@ import Main from '../src/components/Main/Main.js';
 
 function App() {
   return (
-    <>
+    <div className="App">
       {' '}
       <Main />
-    </>
+    </div>
 
     // <div className="App">
     //   <header className="App-header">

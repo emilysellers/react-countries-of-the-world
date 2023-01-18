@@ -8,7 +8,7 @@ export default function Main() {
 
   return (
     <main>
-      <h1>Countries of the world</h1>
+      <h1>Countries of the World</h1>
       <div className="searchBar">
         <label>Search</label>
         <input type="text"></input>
@@ -28,6 +28,7 @@ export default function Main() {
           <Country key={country.id} {...country} />
         ))}
       </section>
+      <footer>developed by Emily 2023</footer>
     </main>
   );
 }
