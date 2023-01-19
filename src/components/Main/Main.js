@@ -8,7 +8,7 @@ export default function Main() {
   const { countries, error } = useCountries();
   const [continent, setContinent] = useState('all');
   const [searchInput, setSearchInput] = useState('');
-  console.log('search input', searchInput);
+  //   console.log('search input', searchInput);
   const continents = [...new Set(countries.map(({ continent }) => continent))];
   const filtered = countries.filter(
     (country) => country.continent === continent || continent === 'all'
@@ -37,16 +37,11 @@ export default function Main() {
       </div>
       <section className="countryDisplay">
         {filtered
-          .filter(({ name }) => name.includes(searchInput) || name.match(searchInput))
+          .filter(({ name }) => name.toLowerCase().includes(searchInput.toLowerCase()))
           .map((country) => (
             <Country key={country.id} {...country} />
           ))}
       </section>
-      {/* <section className="countryDisplay">
-        {filtered.map((country) => (
-          <Country key={country.id} {...country} />
-        ))}
-      </section> */}
       <p style={{ color: 'red' }}>{error}</p>
       <footer>developed by Emily Sellers 2023</footer>
     </main>
