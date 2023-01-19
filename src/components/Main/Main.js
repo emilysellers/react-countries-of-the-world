@@ -5,7 +5,7 @@ import Country from '../Country/Country.js';
 import './Main.css';
 
 export default function Main() {
-  const { countries, error } = useCountries();
+  const { countries, error, isLoading } = useCountries();
   const [continent, setContinent] = useState('all');
   const [searchInput, setSearchInput] = useState('');
   //   console.log('search input', searchInput);
@@ -13,6 +13,10 @@ export default function Main() {
   const filtered = countries.filter(
     (country) => country.continent === continent || continent === 'all'
   );
+
+  if (isLoading && !error) {
+    return <h2>Page loading...</h2>;
+  }
   const handleChange = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
