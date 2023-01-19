@@ -7,30 +7,47 @@ import './Main.css';
 export default function Main() {
   const { countries, error } = useCountries();
   const [continent, setContinent] = useState('all');
-
+  const [searchInput, setSearchInput] = useState('');
+  console.log('search input', searchInput);
   const continents = [...new Set(countries.map(({ continent }) => continent))];
   const filtered = countries.filter(
     (country) => country.continent === continent || continent === 'all'
   );
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+  //   const filteredCountry = countries.filter(({ name }) => name.includes({ selectedCountry }));
 
   return (
     <main>
-      <h1>Countries of the World</h1>
+      <h1>Flags of the World</h1>
       <div className="searchBar">
         <label>Search</label>
-        <input type="text"></input>
-        <select onChange={(event) => setContinent(event.target.value)}>
-          <option value="all">all</option>
-          {continents.map((continent) => (
-            <option key={continent}>{continent}</option>
-          ))}
-        </select>
+        {/* <input type="text"></input> */}
+        <input type="text" placeholder="search here" onChange={handleChange}></input>
+        <div>
+          <label>Filter by continent</label>
+          <select onChange={(event) => setContinent(event.target.value)}>
+            <option value="all">All</option>
+            {continents.map((continent) => (
+              <option key={continent}>{continent}</option>
+            ))}
+          </select>
+        </div>
       </div>
       <section className="countryDisplay">
+        {filtered
+          .filter(({ name }) => name.includes(searchInput))
+          .map((country) => (
+            <Country key={country.id} {...country} />
+          ))}
+      </section>
+      {/* <section className="countryDisplay">
         {filtered.map((country) => (
           <Country key={country.id} {...country} />
         ))}
-      </section>
+      </section> */}
       <p style={{ color: 'red' }}>{error}</p>
       <footer>developed by Emily Sellers 2023</footer>
     </main>
