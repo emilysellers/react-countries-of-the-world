@@ -17,7 +17,6 @@ export default function Main() {
     e.preventDefault();
     setSearchInput(e.target.value);
   };
-  //   const filteredCountry = countries.filter(({ name }) => name.includes({ selectedCountry }));
 
   return (
     <main>
@@ -38,7 +37,7 @@ export default function Main() {
       </div>
       <section className="countryDisplay">
         {filtered
-          .filter(({ name }) => name.includes(searchInput))
+          .filter(({ name }) => name.includes(searchInput) || name.match(searchInput))
           .map((country) => (
             <Country key={country.id} {...country} />
           ))}
