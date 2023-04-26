@@ -1,12 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import Main from '../src/components/Main/Main.js';
+import Footer from './components/Footer.js';
 
 function App() {
   return (
     <div className="App">
       {' '}
       <Main />
+      <Footer />
     </div>
 
     // <div className="App">

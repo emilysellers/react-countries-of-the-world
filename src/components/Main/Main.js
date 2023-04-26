@@ -49,7 +49,6 @@ export default function Main() {
         </section>
         <p style={{ color: 'red' }}>{error}</p>
       </main>
-      <footer>developed by Emily Sellers 2023</footer>
     </>
   );
 }
