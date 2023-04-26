@@ -1,0 +1,27 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 15px;
+  min-height: 70vh;
+}
+
+.countryDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.searchBar {
+  font: 14px;
+}
