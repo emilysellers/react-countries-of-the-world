@@ -23,31 +23,33 @@ export default function Main() {
   };
 
   return (
-    <main>
-      <h1>Flags of the World</h1>
-      <div className="searchBar">
-        <label>Search</label>
-        {/* <input type="text"></input> */}
-        <input type="text" placeholder="search here" onChange={handleChange}></input>
-        <div>
-          <label>Filter by continent</label>
-          <select onChange={(event) => setContinent(event.target.value)}>
-            <option value="all">All</option>
-            {continents.map((continent) => (
-              <option key={continent}>{continent}</option>
-            ))}
-          </select>
+    <>
+      <main className="main">
+        <h1>Flags of the World</h1>
+        <div className="searchBar">
+          <label>Search</label>
+          {/* <input type="text"></input> */}
+          <input type="text" placeholder="search here" onChange={handleChange}></input>
+          <div>
+            <label>Filter by continent</label>
+            <select onChange={(event) => setContinent(event.target.value)}>
+              <option value="all">All</option>
+              {continents.map((continent) => (
+                <option key={continent}>{continent}</option>
+              ))}
+            </select>
+          </div>
         </div>
-      </div>
-      <section className="countryDisplay">
-        {filtered
-          .filter(({ name }) => name.toLowerCase().includes(searchInput.toLowerCase()))
-          .map((country) => (
-            <Country key={country.id} {...country} />
-          ))}
-      </section>
-      <p style={{ color: 'red' }}>{error}</p>
+        <section className="countryDisplay">
+          {filtered
+            .filter(({ name }) => name.toLowerCase().includes(searchInput.toLowerCase()))
+            .map((country) => (
+              <Country key={country.id} {...country} />
+            ))}
+        </section>
+        <p style={{ color: 'red' }}>{error}</p>
+      </main>
       <footer>developed by Emily Sellers 2023</footer>
-    </main>
+    </>
   );
 }

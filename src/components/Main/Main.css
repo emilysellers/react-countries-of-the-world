@@ -5,6 +5,7 @@ main {
   align-items: center;
   align-content: center;
   gap: 15px;
+  min-height: 95vh;
 }
 
 .countryDisplay {
