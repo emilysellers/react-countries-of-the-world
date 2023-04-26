@@ -25,7 +25,6 @@ export default function Main() {
   return (
     <>
       <main className="main">
-        <h1>Flags of the World</h1>
         <div className="searchBar">
           <label>Search</label>
           {/* <input type="text"></input> */}

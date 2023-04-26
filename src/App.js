@@ -2,11 +2,13 @@
 import './App.css';
 import Main from '../src/components/Main/Main.js';
 import Footer from './components/Footer.js';
+import Header from './components/Header.js';
 
 function App() {
   return (
     <div className="App">
       {' '}
+      <Header />
       <Main />
       <Footer />
     </div>
